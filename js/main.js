@@ -12,7 +12,7 @@ let app = {
       img: 'img/pet.png',
       title: 'already caught'
     }],
-    attr: ['rideable', 'ranged', 'healer', 'tank'],
+    attr: ['rideable', 'ranged', 'healer', 'tank', 'beta'],
     list: [],
     saved: [],
     sorting: 2,

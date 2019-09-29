@@ -91,6 +91,10 @@ td > img{
     background-color: #795548;
 }
 
+.beta {
+    background-color: #03A9F4;
+}
+
 a {
     text-decoration: none;
     color: #1565C0;
