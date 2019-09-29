@@ -41,7 +41,8 @@
             <tr v-for="row in list" v-if="testRow(row)">
                 <td><span v-html="getString(row, 2)"></span><small v-for="(a,i) in attr" v-if="row[3+i]" class="attr" v-bind:class="a">{{a}}</small></td>
                 <td v-html="getString(row, 1)"></td>
-                <td v-on:click="change(row[0])" v-bind:title="status[row[7]].title"><img v-bind:src="status[row[7]].img"></td>
+                <td v-on:click="change(row)" v-bind:title="getSaved(row).title"><img v-bind:src="getSaved(row).img">
+                </td>
             </tr>
         </table>
         <br>

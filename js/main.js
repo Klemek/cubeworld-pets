@@ -14,6 +14,7 @@ let app = {
     }],
     attr: ['rideable', 'ranged', 'healer', 'tank'],
     list: [],
+    saved: [],
     sorting: 2,
     query: '',
   },
@@ -55,30 +56,21 @@ let app = {
       }
       app.refresh();
     },
-    'change': (i) => {
-      const row = app.list.filter(r => r[0] === i)[0];
-      row[7] = (row[7] + 1) % 3;
+    'change': (row) => {
+      app.saved[row[0]] = (app.saved[row[0]] + 1) % 3;
       app.save();
       app['$forceUpdate']();
     },
     save: () => {
-      const d = new Array(app.list.length).fill('');
-      app.list.forEach(row => {
-        if (row[7])
-          d[row[0]] = row[7];
-      });
-      cookies.set('caught', d.join('-'));
+      cookies.set('caught', app.saved.join('-').replace(/0/g, ''));
+    },
+    'getSaved': (row) => {
+      return app.status[app.saved[row[0]]] || {};
     }
   },
   'mounted': () => {
-    const d = cookies.get('caught').split('-');
-    data.list.forEach((row, i) => {
-      if(row.length){
-        app.data.list.push([i, ...row, d[i] || 0]);
-      }else{
-        app.data.list.push([i, ...new Array(8).fill(0), d[i] || 0]);
-      }
-    });
+    app.data.saved = cookies.get('caught').split('-').map(v => !v ? 0 : parseInt(v));
+    app.data.list = data.list;
     setTimeout(() => {
       document.getElementById('app').setAttribute('style', '');
       app.refresh();
