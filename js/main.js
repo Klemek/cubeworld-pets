@@ -28,11 +28,11 @@ let app = {
     },
     'getString': (row, i) => {
       if (!app.query || !row[i].toLowerCase().includes(app.query.toLowerCase()))
-        return row[i];
+        return row[i].replace(/\n/g, '<br>');
       const index = row[i].toLowerCase().indexOf(app.query.toLowerCase());
-      return row[i].substr(0, index) + '<b>' +
+      return (row[i].substr(0, index) + '<b>' +
        row[i].substr(index, app.query.length) + '</b>' +
-       row[i].substr(index + app.query.length);
+       row[i].substr(index + app.query.length)).replace(/\n/g, '<br>');
 
     },
     'testRow': (row) => {
