@@ -35,9 +35,9 @@ let app = {
 
     },
     'testRow': (row) => {
-      return !app.query ||
+      return row[1] !== 0 && (!app.query ||
        row[1].toLowerCase().includes(app.query.toLowerCase()) ||
-       row[2].toLowerCase().includes(app.query.toLowerCase());
+       row[2].toLowerCase().includes(app.query.toLowerCase()));
     },
     refresh: () => {
       if (app.sorting > 0) {
@@ -73,7 +73,11 @@ let app = {
   'mounted': () => {
     const d = cookies.get('caught').split('-');
     data.list.forEach((row, i) => {
-      app.data.list.push([i, ...row, d[i] || 0]);
+      if(row.length){
+        app.data.list.push([i, ...row, d[i] || 0]);
+      }else{
+        app.data.list.push([i, ...new Array(8).fill(0), d[i] || 0]);
+      }
     });
     setTimeout(() => {
       document.getElementById('app').setAttribute('style', '');

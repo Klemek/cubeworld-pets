@@ -45,7 +45,7 @@ const cookies = {
 
 const data = {
   list: [
-   //food(0), pet(1), rideable(2), ranged(3), healer(4), tank(5)
+    //food(0), pet(1), rideable(2), ranged(3), healer(4), tank(5)
     ['Apple Ring', 'Crocodile', true, false, false, false],
     ['Banana Split', 'Monkey', false, false, false, false],
     ['Biscuit Roll', 'Bumblebee', false, false, false, false],
@@ -92,6 +92,7 @@ const data = {
     ['Pumpkin Mash', 'Pig', true, false, false, false],
     ['Radicchio Salad', 'Earth Caterpillar', true, false, false, false],
     ['Raspberry Juice', 'Flamingo', false, false, false, false],
+    [], //Rice Milk Chocolate Bar merged with Milk Chocolate Bar
     ['Salted Caramel', 'Seagull', false, false, false, false],
     ['Soft Ice', 'Penguin', false, false, false, false],
     ['Spring Water', 'Cormling Sprout', true, false, false, false],
