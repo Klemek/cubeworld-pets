@@ -8,6 +8,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    max-width: 100%;
 }
 
 body {
@@ -21,12 +22,6 @@ main {
     min-height: 100%;
 }
 
-@media only screen and (min-width: 768px) {
-    main {
-        max-width: 42rem;
-    }
-}
-
 #query {
     font-size: 1.1em;
     height: 1.8em;
@@ -37,6 +32,7 @@ main {
 table{
     border-collapse: collapse;
     width:100%;
+    font-size: .9em;
 }
 
 td, th{
@@ -57,7 +53,7 @@ td > span{
 td:last-child{
     cursor:pointer;
     user-select: none;
-    padding:0;
+    padding:.3em;
     text-align: center;
 }
 
@@ -101,4 +97,13 @@ a {
 
 a:hover {
     color: #2196F3;
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        max-width: 42rem;
+    }
+    table{
+        font-size:inherit;
+    }
 }
