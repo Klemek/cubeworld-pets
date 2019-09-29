@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, serif;
+    color: #424242;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+main {
+    max-width: 42rem;
+    padding: 2rem;
+    margin: auto;
+    background-color: #EEEEEE;
+    min-height: 100%;
+}
+
+#query {
+    font-size: 1.1em;
+    height: 1.8em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+
+td, th{
+    border: 1px solid #424242;
+    padding:.5em;
+    text-align: left;
+}
+
+th{
+    cursor:pointer;
+    user-select: none;
+}
+
+td > span{
+    margin-right:.5em;
+}
+
+td:last-child{
+    cursor:pointer;
+    user-select: none;
+    padding:0;
+    text-align: center;
+}
+
+td > img{
+    height: 33px;
+    display: inline-block;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    vertical-align: middle;
+}
+
+.attr{
+    color:#fff;
+    padding:.1em .3em;
+    border-radius: .3em;
+    display:inline-block;
+    margin-right:.5em;
+}
+
+.rideable{
+    background-color: #607D8B;
+}
+
+.ranged{
+    background-color: #8BC34A;
+}
+
+.healer{
+    background-color: #f44336;
+}
+
+.tank{
+    background-color: #795548;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CubeWorld Pets</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- favicon related -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#424242">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#424242">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#424242">
+</head>
+<body>
+    <main id="app" style="display:none">
+        <h1>CubeWorld Pets</h1>
+        <input id="query" v-model="query" placeholder="Search something">
+        <table>
+            <tr>
+                <th v-on:click="setSorting(2)">Pet&nbsp;<span v-html="sorted(2)"></span></th>
+                <th v-on:click="setSorting(1)">Food&nbsp;<span v-html="sorted(1)"></span></th>
+                <th v-on:click="setSorting(7)">Caught&nbsp;<span v-html="sorted(7)"></span></th>
+            </tr>
+            <tr v-for="row in list" v-if="testRow(row)">
+                <td><span v-html="getString(row, 2)"></span><small v-for="(a,i) in attr" v-if="row[3+i]" class="attr" v-bind:class="a">{{a}}</small></td>
+                <td v-html="getString(row, 1)"></td>
+                <td v-on:click="change(row[0])" v-bind:title="status[row[7]].title"><img v-bind:src="status[row[7]].img"></td>
+            </tr>
+        </table>
+        <br>
+        <small><a href="https://twitter.com/_klemek" target="_blank">@Klemek</a> - 2019</small>
+    </main>
+</body>
+</html>
