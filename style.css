@@ -27,6 +27,7 @@ main {
     height: 1.8em;
     width: 100%;
     margin-bottom: 1em;
+    padding:.5em;
 }
 
 table{
