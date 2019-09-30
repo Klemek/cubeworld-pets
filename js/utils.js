@@ -99,7 +99,7 @@ const data = {
     [50, 'Strawberry Cake', 'Squirrel', ['forest', 'greenlands'], false, false, false, false, false],
     [51, 'Strawberry Cocktail', 'Crab', [], true, false, false, false, false],
     [52, 'Sugar Candy', 'Duckbill', ['river'], true, false, false, false, false],
-    [53, 'Vanilla Cupcake', 'Light Alpaca', [], true, false, false, false, false],
+    [53, 'Vanilla Cupcake', 'Alpaca (light)', [], true, false, false, false, false],
     [54, 'Waffle', 'Terrier', ['city', 'greenlands'], true, false, false, false, false],
     [55, 'Water Ice', 'Spitter', ['ocean', 'river', 'lake'], false, true, true, false, false],
     [56, 'White Chocolate Bar', 'Snow Runner', ['snowlands'], true, false, false, false, false],

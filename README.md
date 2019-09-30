@@ -15,4 +15,5 @@ This list is aggregated from the following sources:
 * [CubeWorld Wiki (slightly out of date)](https://cubeworld.gamepedia.com/Pet_Food)
 * [CubeWorld ProGameGuide](https://progameguides.com/cube-world/cube-world-pets-guide/)
 * [CubeWorld Reddit](https://www.reddit.com/r/cubeworld)
+* [Alpha Game Dump](https://gist.github.com/Andoryuuta/e6bde7421dce393952b7071ba8c010ce)
 * Personal experience of the beta
