@@ -44,7 +44,7 @@ let app = {
     refresh: () => {
       let extract = a => '' + a[Math.abs(app.sorting)];
       if(Math.abs(app.sorting) === 100)
-        extract = a => '' + app.saved[a[0]];
+        extract = a => '' + app.saved[a[0]] + a[2];
       app.list.sort((a, b) => extract(a).localeCompare(extract(b)));
       if (app.sorting < 0)
         app.list = app.list.reverse();
@@ -96,10 +96,5 @@ let app = {
 };
 
 window.onload = () => {
-  //cookie debug purpose
-  if(location.search === '?debug'){
-    document.body.innerHTML += `<pre>${document.cookie}</pre>` 
-  }
-  
   app = new Vue(app);
 };
