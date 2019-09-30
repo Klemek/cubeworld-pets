@@ -57,8 +57,8 @@ let app = {
       app.refresh();
     },
     'change': (row) => {
-      app.saved[row[0]] = (app.saved[row[0]] + 1) % 3;
-      app.save();
+      app.saved[row[0]] = ((app.saved[row[0]]||0) + 1) % 3;
+      setTimeout(app.save);
       app['$forceUpdate']();
     },
     save: () => {
