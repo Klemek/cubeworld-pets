@@ -86,7 +86,7 @@ let app = {
       row[3].sort();
     });
     app.data.sorting = parseInt(cookies.get('sorting') || app.data.sorting);
-    app.data.biomes = cookies.get('biomes') || app.data.biomes;
+    app.data.biomes = cookies.get('biomes') === 'true';
     setTimeout(() => {
       document.getElementById('app').setAttribute('style', '');
       app.refresh();
