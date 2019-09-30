@@ -99,3 +99,8 @@ let app = {
 window.onload = () => {
   app = new Vue(app);
 };
+
+//cookie debug purpose
+if(location.search === '?debug'){
+  document.body.innerHTML += `<pre>${document.cookie}</pre>` 
+}
