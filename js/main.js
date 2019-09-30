@@ -86,6 +86,8 @@ let app = {
     app.data.list = data.list;
     data.list.forEach(row => {
       row[3].sort();
+      if(!app.data.saved[row[0]])
+        app.data.saved[row[0]] = 0;
     });
     app.data.sorting = parseInt(cookies.get('sorting') || app.data.sorting);
     app.data.biomes = cookies.get('biomes') === 'true';
