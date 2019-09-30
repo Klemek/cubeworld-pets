@@ -54,7 +54,9 @@ let app = {
       app['$forceUpdate']();
     },
     'setBiome': () => {
-      cookies.set('biomes', app.biomes);
+      setTimeout(()=>{
+        cookies.set('biomes', app.biomes);
+      });
     },
     'setSorting': (i) => {
       if (Math.abs(app.sorting) === i) {
