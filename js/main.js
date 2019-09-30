@@ -34,7 +34,6 @@ let app = {
       return (row[i].substr(0, index) + '<b>' +
        row[i].substr(index, app.query.length) + '</b>' +
        row[i].substr(index + app.query.length)).replace(/\n/g, '<br>');
-
     },
     'testRow': (row) => {
       return row[1] !== 0 && (!app.query ||
@@ -44,7 +43,7 @@ let app = {
     refresh: () => {
       let extract = a => '' + a[Math.abs(app.sorting)];
       if(Math.abs(app.sorting) === 100)
-        extract = a => '' + app.saved[a[0]] + a[2];
+        extract = a => '' + (3 - app.saved[a[0]]) + a[2]; // already caught and alpha order first
       app.list.sort((a, b) => extract(a).localeCompare(extract(b)));
       if (app.sorting < 0)
         app.list = app.list.reverse();
