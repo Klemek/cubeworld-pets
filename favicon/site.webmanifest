@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "CubeWorld Pets",
+    "short_name": "CubeWorld Pets",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
@@ -15,5 +15,8 @@
     ],
     "theme_color": "#424242",
     "background_color": "#424242",
-    "display": "standalone"
+    "display": "standalone",
+    "permissions": [
+        "cookies"
+    ]
 }
