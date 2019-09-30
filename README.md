@@ -1,3 +1,6 @@
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Klemek/cubeworld-pets.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Klemek/cubeworld-pets/context:javascript)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/Klemek/cubeworld-pets.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Klemek/cubeworld-pets/alerts/)
+
 # ![](favicon/favicon-32x32.png) CubeWorld Pets
 Interactive list of pets and their respective food
 
