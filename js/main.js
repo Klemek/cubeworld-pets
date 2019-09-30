@@ -42,15 +42,12 @@ let app = {
        row[2].toLowerCase().includes(app.query.toLowerCase()));
     },
     refresh: () => {
-      if(Math.abs(app.sorting) === 100){ //sorted by caught
-        app.list.sort((a, b) => app.saved[a[0]] - app.saved[b[0]]);
-        if (app.sorting < 0)
-          app.list = app.list.reverse();
-      }else{
-        app.list.sort((a, b) => ('' + a[Math.abs(app.sorting)]).localeCompare(('' + b[Math.abs(app.sorting)])));
-        if (app.sorting < 0)
-          app.list = app.list.reverse();
-      }
+      let extract = a => '' + a[Math.abs(app.sorting)];
+      if(Math.abs(app.sorting) === 100)
+        extract = a => '' + app.saved[a[0]];
+      app.list.sort((a, b) => extract(a).localeCompare(extract(b)));
+      if (app.sorting < 0)
+        app.list = app.list.reverse();
       app['$forceUpdate']();
     },
     'setBiome': () => {
