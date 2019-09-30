@@ -82,7 +82,7 @@ let app = {
     }
   },
   'mounted': () => {
-    app.data.saved = cookies.get('caught').split('-').map(v => (!v || v === 'NaN') ? 0 : parseInt(v));
+    app.data.saved = cookies.get('caught').split('-').map(v => (!v || v === 'NaN' || v === 'undefined') ? 0 : parseInt(v));
     app.data.list = data.list;
     data.list.forEach(row => {
       row[3].sort();
