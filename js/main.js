@@ -55,7 +55,7 @@ let app = {
     },
     'setBiome': () => {
       setTimeout(()=>{
-        cookies.set('biomes', app.biomes);
+        cookies.set('biomes', app.biomes, 90);
       });
     },
     'setSorting': (i) => {
@@ -65,7 +65,7 @@ let app = {
         app.sorting = i;
       }
       setTimeout(()=>{
-        cookies.set('sorting', app.sorting);
+        cookies.set('sorting', app.sorting, 90);
       });
       app.refresh();
     },
@@ -75,7 +75,7 @@ let app = {
       app['$forceUpdate']();
     },
     save: () => {
-      cookies.set('caught', app.saved.join('-').replace(/0/g, ''));
+      cookies.set('caught', app.saved.join('-').replace(/0/g, ''), 90);
     },
     'getSaved': (row) => {
       return app.status[app.saved[row[0]]] || {};
