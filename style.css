@@ -30,8 +30,12 @@ h1 {
     font-size: 1.1em;
     height: 1.8em;
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     padding:.5em;
+}
+
+#biomes{
+    margin-bottom: .5em;
 }
 
 table{

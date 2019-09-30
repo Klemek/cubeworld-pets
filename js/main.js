@@ -17,6 +17,7 @@ let app = {
     saved: [],
     sorting: 2,
     query: '',
+    biomes: false,
   },
   methods: {
     'sorted': (i) => {
@@ -41,10 +42,14 @@ let app = {
        row[2].toLowerCase().includes(app.query.toLowerCase()));
     },
     refresh: () => {
-      if (app.sorting > 0) {
-        app.list.sort((a, b) => ('' + a[app.sorting]).localeCompare(('' + b[app.sorting])));
-      } else {
-        app.list.sort((a, b) => ('' + b[-app.sorting]).localeCompare(('' + a[-app.sorting])));
+      if(Math.abs(app.sorting) === 100){ //sorted by caught
+        app.list.sort((a, b) => app.saved[a[0]] - app.saved[b[0]]);
+        if (app.sorting < 0)
+          app.list = app.list.reverse();
+      }else{
+        app.list.sort((a, b) => ('' + a[Math.abs(app.sorting)]).localeCompare(('' + b[Math.abs(app.sorting)])));
+        if (app.sorting < 0)
+          app.list = app.list.reverse();
       }
       app['$forceUpdate']();
     },
@@ -54,6 +59,9 @@ let app = {
       } else {
         app.sorting = i;
       }
+      setTimeout(()=>{
+        cookies.set('sorting', app.sorting);
+      });
       app.refresh();
     },
     'change': (row) => {
@@ -71,6 +79,8 @@ let app = {
   'mounted': () => {
     app.data.saved = cookies.get('caught').split('-').map(v => !v ? 0 : parseInt(v));
     app.data.list = data.list;
+    app.data.sorting = parseInt(cookies.get('sorting') || app.data.sorting);
+    app.data.biomes = cookies.get('biomes') || app.data.biomes;
     setTimeout(() => {
       document.getElementById('app').setAttribute('style', '');
       app.refresh();
