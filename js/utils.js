@@ -105,8 +105,8 @@ const data = {
     [56, 'White Chocolate Bar', 'Snow Runner', ['snowlands'], true, false, false, false, false],
     [57, 'Yellow Jelly', 'Yellow Slime', ['desert'], true, false, false, false, false],
     [58, 'Banana Mash', 'Warthog', [], false, false, false, false, false],
-    [59, 'Unknown', 'Alpha Dog', [], false, false, false, false, true],
-    [60, 'Unknown', 'Savage Dog', [], false, false, false, false, true],
-    [61, 'Unknown', 'Mana Deer', [], false, false, false, false, true],
+    //[59, 'Unknown', 'Alpha Dog', [], false, false, false, false, true],
+    //[60, 'Unknown', 'Savage Dog', [], false, false, false, false, true],
+    //[61, 'Unknown', 'Mana Deer', [], false, false, false, false, true],
   ]
 };
