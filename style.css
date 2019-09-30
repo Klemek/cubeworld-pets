@@ -81,6 +81,8 @@ td > img{
     border-radius: .3em;
     display:inline-block;
     margin-right:.5em;
+    margin-bottom: .3em;
+    background-color: #8E24AA;
 }
 
 .rideable{
@@ -101,6 +103,62 @@ td > img{
 
 .beta {
     background-color: #03A9F4;
+}
+
+.biome-snowlands {
+    background-color: #757575;
+}
+
+.biome-desert {
+    background-color: #FB8C00;
+}
+
+.biome-greenlands {
+    background-color: #AFB42B;
+}
+
+.biome-hills {
+    background-color: #9E9D24;
+}
+
+.biome-river {
+    background-color: #00796B;
+}
+
+.biome-ocean {
+    background-color: #1976D2;
+}
+
+.biome-lake {
+    background-color: #0097A7;
+}
+
+.biome-jungle {
+    background-color: #388E3C;
+}
+
+.biome-city {
+    background-color: #424242;
+}
+
+.biome-forest {
+    background-color: #689F38;
+}
+
+.biome-cave {
+    background-color: #212121;
+}
+
+.biome-mountain {
+    background-color: #455A64;
+}
+
+.biome-lavalands {
+    background-color: #e53935;
+}
+
+.biome-island {
+    background-color: #FFB300;
 }
 
 a {

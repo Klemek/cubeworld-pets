@@ -32,7 +32,7 @@
     <main id="app" style="display:none">
         <h1>CubeWorld Pets</h1>
         <input id="query" v-model="query" placeholder="Search something">
-        <!--<div id="biomes"><input v-model="biomes" type="checkbox"> Show known pet biomes</div>-->
+        <div id="biomes"><input v-model="biomes" v-on:click="setBiome" type="checkbox"> Show known pet biomes</div>
         <table>
             <tr>
                 <th v-on:click="setSorting(2)">Pet&nbsp;<span v-html="sorted(2)"></span></th>
@@ -40,7 +40,10 @@
                 <th v-on:click="setSorting(100)">Caught&nbsp;<span v-html="sorted(100)"></span></th>
             </tr>
             <tr v-for="row in list" v-if="testRow(row)">
-                <td><span v-html="getString(row, 2)"></span><small v-for="(a,i) in attr" v-if="row[3+i]" class="attr" v-bind:class="a">{{a}}</small></td>
+                <td><span v-html="getString(row, 2)"></span>
+                    <small v-for="(a,i) in attr" v-if="row[4+i]" class="attr" v-bind:class="a">{{a}}</small>
+                    <span v-if="biomes"><br><small v-for="b in row[3]" class="attr"
+                                                   v-bind:class="'biome-'+b">{{b}}</small></span></td>
                 <td v-html="getString(row, 1)"></td>
                 <td v-on:click="change(row)" v-bind:title="getSaved(row).title"><img v-bind:src="getSaved(row).img">
                 </td>

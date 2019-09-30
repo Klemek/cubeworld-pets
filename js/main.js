@@ -53,6 +53,9 @@ let app = {
       }
       app['$forceUpdate']();
     },
+    'setBiome': () => {
+      cookies.set('biomes', app.biomes);
+    },
     'setSorting': (i) => {
       if (Math.abs(app.sorting) === i) {
         app.sorting = -app.sorting;
@@ -79,6 +82,9 @@ let app = {
   'mounted': () => {
     app.data.saved = cookies.get('caught').split('-').map(v => !v ? 0 : parseInt(v));
     app.data.list = data.list;
+    data.list.forEach(row => {
+      row[3].sort();
+    });
     app.data.sorting = parseInt(cookies.get('sorting') || app.data.sorting);
     app.data.biomes = cookies.get('biomes') || app.data.biomes;
     setTimeout(() => {
